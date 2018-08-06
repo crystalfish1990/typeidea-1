@@ -29,6 +29,12 @@ class Post(models.Model):
     def __unicode__(self):
         return self.title
 
+    def __str__(self):
+        return self.title
+
+    def __repr__(self):
+        return self.title
+
     class Meta:
         verbose_name = verbose_name_plural = "文章"
 
@@ -55,6 +61,12 @@ class Category(models.Model):
     def __unicode__(self):
         return self.name
 
+    def __str__(self):
+        return self.name
+
+    def __repr__(self):
+        return self.name
+
     class Meta:
         verbose_name = verbose_name_plural = '分类'
 
@@ -75,6 +87,9 @@ class Tag(models.Model):
         return self.name
 
     def __unicode__(self):
+        return self.name
+
+    def __repr__(self):
         return self.name
 
     class Meta:

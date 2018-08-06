@@ -19,11 +19,11 @@ class PostAdmin(BaseOwnerAdmin):
         'title', 'category', 'status_show',
         'created_time', 'operator'
     ]
-    list_display_links = []
 
-    list_filter = ['category', ]
+    list_display_links = ['category']
+
+    list_filter = ['category__name']
     search_fields = ['title', 'category__name']
-    save_on_top = True
 
     actions_on_top = True
     actions_on_bottom = True
@@ -32,7 +32,8 @@ class PostAdmin(BaseOwnerAdmin):
     save_on_top = True
 
     fields = (
-        ('category', 'title'),
+        'title',
+        'category',
         'desc',
         'status',
         'content',
